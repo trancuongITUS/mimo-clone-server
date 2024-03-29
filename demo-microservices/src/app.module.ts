@@ -7,6 +7,9 @@ import { AppService } from './app.service';
 import { User } from './users/user.model';
 import { UserModule } from './users/user.module';
 
+import { Course } from './courses/course.model';
+import { CourseModule } from './courses/course.module';
+
 @Module({
   imports: [
     SequelizeModule.forRoot({
@@ -16,9 +19,11 @@ import { UserModule } from './users/user.module';
       username: 'postgres',
       password: '123456',
       database: 'test',
-      models: [User],
+      models: [User, Course],
+      autoLoadModels: true,
     }),
     UserModule,
+    CourseModule,
   ],
   controllers: [AppController],
   providers: [AppService],
