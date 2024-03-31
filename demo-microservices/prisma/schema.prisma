@@ -8,13 +8,26 @@ datasource db {
 }
 
 model courses {
-  id                      Int     @id @default(autoincrement())
-  title                   String  @db.VarChar(255)
-  slug                    String  @db.VarChar(255)
+  id                      Int        @id @default(autoincrement())
+  title                   String     @db.VarChar(255)
+  slug                    String     @db.VarChar(255)
   descriptionContent      String
   shortDescriptionContent String
   onboardCategory         String
   isNew                   Boolean
   isHidden                Boolean
   iconBanner              String
+  sections                sections[]
+}
+
+model sections {
+  id          Int     @id @default(autoincrement())
+  index       Int
+  name        String  @db.VarChar(255)
+  description String
+  startIndex  Int
+  endIndex    Int
+  isLocked    Boolean
+  courseId    Int
+  course      courses @relation(fields: [courseId], references: [id])
 }

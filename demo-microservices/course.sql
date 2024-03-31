@@ -1,19 +1,4 @@
--- CreateTable
-CREATE TABLE "courses" (
-    "id" SERIAL NOT NULL,
-    "title" VARCHAR(255) NOT NULL,
-    "slug" VARCHAR(255) NOT NULL,
-    "descriptionContent" TEXT NOT NULL,
-    "shortDescriptionContent" TEXT NOT NULL,
-    "onboardCategory" TEXT NOT NULL,
-    "isNew" BOOLEAN NOT NULL,
-    "isHidden" BOOLEAN NOT NULL,
-    "iconBanner" TEXT NOT NULL,
-
-    CONSTRAINT "courses_pkey" PRIMARY KEY ("id")
-);
-
--- ADD 6 COURSES IN MIMO APP
+-- ADD COURSES IN MIMO APP
 
 INSERT INTO public.courses(title, 
 slug, 

@@ -1,19 +1,32 @@
 ## Tìm hiểu cấu trúc database khóa học của mimo
 
 Xem cấu trúc tạm thời của database khóa học của mimo ở [đây](https://dbdiagram.io/d/hihi-6607ba1837b7e33fd716ebf6).
-Tạm thời demo bảng Course trước vì các bảng kia chưa chắc chắn đúng.
-Bảng Course sẽ chứa thông tin của 6 khóa học chính ở trong mimo: HTML, CSS, Javascript, SQL, Python, Swift.
 
-## Tạo bảng và thêm dữ liệu vào postgres ở local
+## Sử dụng biến môi trường
 
-1. Tạo database mới ở postgres local đặt tên là: mimo-clone.
-2. Dùng script ở course.sql paste vào query tool để tạo và thêm dữ liệu vào bảng.
+Tạo file .env ở bên trong api-gateway và demo-microservices và copy giá trị từ các file .env.sample dán vào đó.
 
-## Kết nối database ở local
+## Cấu hình kết nối database postgres ở local bằng prisma
 
-Modify lại các từ được viết in hoa ở giá trị của biến DATABASE_URL trong .env.sample để phù hợp với cấu hình postgresql của máy mình.
+Modify lại các từ được viết in hoa ở giá trị của biến DATABASE_URL trong .env.sample (demo-microservices) để phù hợp với cấu hình postgresql của máy mình.
 
-## Dùng prisma để thao tác với postgres sau khi hoàn thành bước ở trên
+## Tạo database và các tables
+
+```bash
+$ npx prisma migrate dev --name init
+```
+
+## Thêm records vào bảng courses
+
+1. Mở query tool của bảng courses
+2. Copy nội dung của course.sql, paste vào query tool và chạy.
+
+## Thêm records vào bảng sections
+
+1. Mở query tool của bảng sections
+2. Copy nội dung của section.sql, paste vào query tool và chạy.
+
+## Cập nhật prisma schema và prisma client sau khi thêm records vào bảng courses và sections
 
 ```bash
 # Cập nhật lại prisma schema
@@ -26,3 +39,11 @@ $ npx prisma generate
 ## Lấy thông tin của tất cả các khóa học
 
 Url: http://localhost:3001/course
+
+## Lấy thông tin của tất cả các section
+
+Url: http://localhost:3001/section
+
+## Lấy thông tin của một khóa học theo id
+
+Url: http://localhost:3001/course/:id

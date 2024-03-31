@@ -1,6 +1,6 @@
 import { Controller } from '@nestjs/common';
 import { CourseService } from './course.service';
-import { MessagePattern } from '@nestjs/microservices';
+import { MessagePattern, Payload } from '@nestjs/microservices';
 
 @Controller('course')
 export class CourseController {
@@ -9,5 +9,10 @@ export class CourseController {
   @MessagePattern({ cmd: 'get_all_courses' })
   async getAllCourses() {
     return await this.courseService.getAllCourses();
+  }
+
+  @MessagePattern({ cmd: 'get_course_by_id' })
+  async getCourseById(@Payload() data: { courseId: number }) {
+    return await this.courseService.getCourseById(data.courseId);
   }
 }
