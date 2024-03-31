@@ -1,18 +1,8 @@
 import { Module } from '@nestjs/common';
-import { ClientsModule, Transport } from '@nestjs/microservices';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { CourseModule } from './course/course.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-    imports: [
-        ClientsModule.register(
-            [{
-                name: 'MATH-SERVICE',
-                transport: Transport.TCP
-            }]
-        )
-    ],
-    controllers: [AppController],
-    providers: [],
+  imports: [ConfigModule.forRoot(), CourseModule],
 })
 export class AppModule {}
