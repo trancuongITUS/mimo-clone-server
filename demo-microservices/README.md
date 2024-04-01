@@ -36,14 +36,6 @@ $ npx prisma db pull
 $ npx prisma generate
 ```
 
-## Lấy thông tin của tất cả các khóa học
+## Test Api bằng Swagger
 
-Url: http://localhost:3001/course
-
-## Lấy thông tin của tất cả các section
-
-Url: http://localhost:3001/section
-
-## Lấy thông tin của một khóa học theo id
-
-Url: http://localhost:3001/course/:id
+Url: http://localhost:3001/api
