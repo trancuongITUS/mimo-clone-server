@@ -14,7 +14,7 @@ async function bootstrap() {
 	app.useGlobalInterceptors(new TransformInterceptor());
 	app.useGlobalInterceptors(new TimeoutInterceptor());
 
-	await app.listen(3001);
+	await app.listen(8080);
 
 	if (module.hot) {
 		module.hot.accept();
