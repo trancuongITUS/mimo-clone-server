@@ -15,7 +15,7 @@ VALUES ('HTML',
 'build', 
 true, 
 false, 
-'https://res.cloudinary.com/dw3pxcshp/image/upload/v1711797699/bjgw86tktpf6qfey08op.png');
+'https://res.cloudinary.com/dw3pxcshp/image/upload/v1711947398/asjvuxdjywqefqny8e15.png');
 
 INSERT INTO public.courses(title, 
 slug, 
@@ -32,7 +32,7 @@ VALUES ('CSS',
 'none', 
 true, 
 false, 
-'https://res.cloudinary.com/dw3pxcshp/image/upload/v1711853685/gfhzjto786atvj7j23sx.png');
+'https://res.cloudinary.com/dw3pxcshp/image/upload/v1711947722/h5pbit2dly8ogyztbwqo.png');
 
 INSERT INTO public.courses(title, 
 slug, 
@@ -49,7 +49,7 @@ VALUES ('JavaScript',
 'build', 
 true, 
 false, 
-'https://res.cloudinary.com/dw3pxcshp/image/upload/v1711854064/z55xnpvwnkzpesocekpr.png');
+'https://res.cloudinary.com/dw3pxcshp/image/upload/v1711948132/qkutp3ydt4qgifkhrtit.png');
 
 INSERT INTO public.courses(title, 
 slug, 
@@ -101,3 +101,54 @@ VALUES ('Swift',
 true, 
 false, 
 'https://res.cloudinary.com/dw3pxcshp/image/upload/v1711858135/dt3uu8jj8v3o5yskm0fw.png');
+
+INSERT INTO public.courses(title, 
+slug, 
+"descriptionContent", 
+"shortDescriptionContent", 
+"onboardCategory",
+"isNew", 
+"isHidden", 
+"iconBanner")
+VALUES ('Python Developer', 
+'python-developer', 
+'Become a Python developer: Learn the all-purpose language Python and build sophisticated programs', 
+'Learn the all-purpose language Python to kickstart your development career', 
+'none', 
+true, 
+false, 
+'https://res.cloudinary.com/dw3pxcshp/image/upload/v1711857873/woayw3xg6odhsbcynmsq.png');
+
+INSERT INTO public.courses(title, 
+slug, 
+"descriptionContent", 
+"shortDescriptionContent", 
+"onboardCategory",
+"isNew", 
+"isHidden", 
+"iconBanner")
+VALUES ('Front-End Developer', 
+'front-end-developer', 
+'Unlock Web Development: Dive Deep into HTML, CSS, and JavaScript, and conquer React', 
+'Learn HTML, CSS, and JavaScript, and conquer React', 
+'none', 
+true, 
+false, 
+'https://res.cloudinary.com/dw3pxcshp/image/upload/v1711947398/asjvuxdjywqefqny8e15.png https://res.cloudinary.com/dw3pxcshp/image/upload/v1711947722/h5pbit2dly8ogyztbwqo.png https://res.cloudinary.com/dw3pxcshp/image/upload/v1711948132/qkutp3ydt4qgifkhrtit.png https://res.cloudinary.com/dw3pxcshp/image/upload/v1711950081/p6cgnfpyugvzwtlsjp2i.png');
+
+INSERT INTO public.courses(title, 
+slug, 
+"descriptionContent", 
+"shortDescriptionContent", 
+"onboardCategory",
+"isNew", 
+"isHidden", 
+"iconBanner")
+VALUES ('Full-Stack Developer', 
+'full-stack-developer', 
+'Become a full-stack developer: Learn HTML, CSS, JavaScript, and React as well as NodeJS, Express, and SQL', 
+'Learn HTML, CSS, JavaScript, and React as well as NodeJS, Express, and SQL', 
+'build', 
+false, 
+false, 
+'https://res.cloudinary.com/dw3pxcshp/image/upload/v1711947398/asjvuxdjywqefqny8e15.png https://res.cloudinary.com/dw3pxcshp/image/upload/v1711947722/h5pbit2dly8ogyztbwqo.png https://res.cloudinary.com/dw3pxcshp/image/upload/v1711948132/qkutp3ydt4qgifkhrtit.png https://res.cloudinary.com/dw3pxcshp/image/upload/v1711950081/p6cgnfpyugvzwtlsjp2i.png https://res.cloudinary.com/dw3pxcshp/image/upload/v1711857335/zo9squricxx6vxot1npo.png https://res.cloudinary.com/dw3pxcshp/image/upload/v1711949071/shjkueoqkzrfxeboeanq.png');

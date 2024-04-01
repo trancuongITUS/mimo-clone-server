@@ -10,18 +10,19 @@ Tạo file .env ở bên trong api-gateway và demo-microservices và copy giá 
 
 Modify lại các từ được viết in hoa ở giá trị của biến DATABASE_URL trong .env.sample (demo-microservices) để phù hợp với cấu hình postgresql của máy mình.
 
-## Tạo database và các tables
+## Tạo database và các tables 
 
 ```bash
+# Đứng ở vị trí folder demo-microservices
 $ npx prisma migrate dev --name init
 ```
 
-## Thêm records vào bảng courses
+## Thêm dữ liệu vào bảng courses trước
 
 1. Mở query tool của bảng courses
 2. Copy nội dung của course.sql, paste vào query tool và chạy.
 
-## Thêm records vào bảng sections
+## Sau đó thêm dữ liệu vào bảng sections
 
 1. Mở query tool của bảng sections
 2. Copy nội dung của section.sql, paste vào query tool và chạy.
@@ -29,6 +30,7 @@ $ npx prisma migrate dev --name init
 ## Cập nhật prisma schema và prisma client sau khi thêm records vào bảng courses và sections
 
 ```bash
+# Đứng ở vị trí folder demo-microservices
 # Cập nhật lại prisma schema
 $ npx prisma db pull
 
@@ -36,6 +38,20 @@ $ npx prisma db pull
 $ npx prisma generate
 ```
 
-## Test Api bằng Swagger
+## Chạy service
+
+```bash
+# Đứng ở vị trí folder demo-microservices
+$ npm run start:dev
+```
+
+## Chạy api-gateway
+
+```bash
+# Đứng ở vị trí folder api-gateway
+$ npm run start:dev
+```
+
+## Kiểm tra các Api bằng Swagger
 
 Url: http://localhost:3001/api

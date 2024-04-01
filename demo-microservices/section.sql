@@ -792,7 +792,566 @@ VALUES (6,
 true, 
 6);
 
+-- ADD SECTIONS OF PYTHON DEVELOPER COURSE
 
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (0,
+'Intro to Python', 
+'Create variables storing numbers, strings, and booleans', 
+0, 
+15, 
+false, 
+7);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (1,
+'Flow Control', 
+'Code conditionals and loops to build smart programs', 
+16, 
+36, 
+true, 
+7);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (2,
+'Lists', 
+'Create lists to organize groups of values', 
+37, 
+57, 
+true, 
+7);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (3,
+'Functions', 
+'Code functions to make code reusable and easier to read', 
+58, 
+71, 
+true, 
+7);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (4,
+'Tuples, Dictionaries, & Sets', 
+'Identify the correct data structures to store data', 
+72, 
+85, 
+true, 
+7);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (5,
+'Modules & APIs', 
+'Use modules and APIs to extend your Python toolkit', 
+86, 
+96, 
+true, 
+7);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (6,
+'Strings & Lists Operations', 
+'Use methods to manipulate strings & lists', 
+97, 
+110, 
+true, 
+7);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (7,
+'Object-Oriented Programming', 
+'Use object-oriented programming for sophisticated apps', 
+111, 
+127, 
+true, 
+7);
+
+-- ADD SECTIONS OF FRONT-END DEVELOPER COURSE
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (0,
+'Intro to Web Development', 
+'Create webpages using HTML and CSS', 
+0, 
+27, 
+false, 
+8);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (1,
+'Interactive Webpages', 
+'Use HTML and JavaScript to create interactive webpages', 
+28, 
+66, 
+true, 
+8);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (2,
+'Intermediate HTML & CSS', 
+'Use HTML and JavaScript to create interactive webpages', 
+67, 
+96, 
+true, 
+8);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (3,
+'Comparisons & Loops', 
+'Code conditionals to build programs that make decisions', 
+97, 
+126, 
+true, 
+8);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (4,
+'Flexbox', 
+'Design beautiful layouts using Flexbox', 
+127, 
+158, 
+true, 
+8);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (5,
+'Grid', 
+'Create beautiful layouts using CSS grid ', 
+159, 
+182, 
+true, 
+8);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (6,
+'Arrays & Functions', 
+'Use arrays & functions to build sophisticated programs', 
+183, 
+227, 
+true, 
+8);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (7,
+'Objects & ES 6', 
+'Learn how to use objects and more advanced JS functions', 
+228, 
+254, 
+true, 
+8);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (8,
+'DOM & Events', 
+'Learn about the DOM tree and node relations', 
+255, 
+277, 
+true, 
+8);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (9,
+'Semantic HTML & Accessibility', 
+'Learn how to create accessible webpages', 
+278, 
+301, 
+true, 
+8);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (10,
+'Synchrony & Asynchrony in JS', 
+'Learn how async JavaScript works', 
+302, 
+310, 
+true, 
+8);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (11,
+'JavaScript Classes', 
+'Create templates for objects using classes', 
+311, 
+327, 
+true, 
+8);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (12,
+'React', 
+'Use React to create modern web apps', 
+328, 
+352, 
+true, 
+8);
+
+-- ADD SECTIONS OF FULL-STACK DEVELOPER COURSE
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (0,
+'Intro to Web Development', 
+'Create webpages using HTML and CSS', 
+0, 
+27, 
+false, 
+9);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (1,
+'Interactive Webpages', 
+'Use HTML and JavaScript to create interactive webpages', 
+28, 
+66, 
+true, 
+9);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (2,
+'Intermediate HTML & CSS', 
+'Dive deeper into HTML \u0026 CSS to create stunning web apps', 
+67, 
+96, 
+true, 
+9);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (3,
+'Comparisons & Loops', 
+'Code conditionals to build programs that make decisions', 
+97, 
+126, 
+true, 
+9);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (4,
+'Flexbox', 
+'Design beautiful layouts using Flexbox', 
+127, 
+158, 
+true, 
+9);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (5,
+'Grid', 
+'Create a CSS grid using rows and columns', 
+159, 
+182, 
+true, 
+9);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (6,
+'Arrays & Functions', 
+'Use arrays & functions to build sophisticated programs', 
+183, 
+227, 
+true, 
+9);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (7,
+'Objects & ES 6', 
+'Learn how to use objects and more advanced JS functions', 
+228, 
+254, 
+true, 
+9);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (8,
+'DOM & Events', 
+'Learn about the DOM tree and node relations', 
+255, 
+277, 
+true, 
+9);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (9,
+'Semantic HTML & Accessibility', 
+'Learn how to create accessible webpages', 
+278, 
+301, 
+true, 
+9);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (10,
+'Synchrony & Asynchrony in JS', 
+'Learn how async JavaScript works', 
+302, 
+310, 
+true, 
+9);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (11,
+'JavaScript Classes', 
+'Create templates for objects using classes', 
+311, 
+327, 
+true, 
+9);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (12,
+'React', 
+'Use React to create modern web apps', 
+328, 
+352, 
+true, 
+9);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (13,
+'SQL Basics', 
+'Learn how to manage data in SQL', 
+353, 
+376, 
+true, 
+9);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (14,
+'Intermediate SQL', 
+'Gain data insights using operations and filters', 
+377, 
+416, 
+true, 
+9);
+
+INSERT INTO public.sections(index,
+name, 
+description, 
+"startIndex", 
+"endIndex", 
+"isLocked", 
+"courseId")
+VALUES (15,
+'Express Basics', 
+'Use Node to dive into backend development', 
+417, 
+450, 
+true, 
+9);
 
 
 
