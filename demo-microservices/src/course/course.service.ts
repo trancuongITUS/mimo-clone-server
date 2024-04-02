@@ -24,15 +24,23 @@ export class CourseService {
         statusCode: HttpStatus.NOT_FOUND,
         message: `Couldn't find course with id = ${courseId}`,
       });
-    const sections = await this.prismaService.sections.findMany({
+    const sectionList = await this.prismaService.sections_courses.findMany({
       where: {
         courseId: courseId,
+      },
+      select: {
+        section: true,
+      },
+      orderBy: {
+        section: {
+          index: 'asc',
+        },
       },
     });
     return {
       course: {
         ...course,
-        sections: sections,
+        sections: sectionList,
       },
     };
   }
