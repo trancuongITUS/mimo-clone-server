@@ -27,7 +27,12 @@ $ npx prisma migrate dev --name init
 1. Mở query tool của bảng sections
 2. Copy nội dung của section.sql, paste vào query tool và chạy.
 
-## Cập nhật prisma schema và prisma client sau khi thêm records vào bảng courses và sections
+## Sau đó thêm dữ liệu vào bảng sections_courses
+
+1. Mở query tool của bảng sections_courses
+2. Copy nội dung của section_course.sql, paste vào query tool và chạy.
+
+## Cập nhật lại prisma schema và prisma client sau khi đã thêm dữ liệu vào các bảng trên
 
 ```bash
 # Đứng ở vị trí folder demo-microservices
