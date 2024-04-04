@@ -12,7 +12,7 @@ export class CourseController {
   }
 
   @MessagePattern({ cmd: 'get_course_by_id' })
-  async getCourseById(@Payload() data: { courseId: number }) {
-    return await this.courseService.getCourseById(data.courseId);
+  async getCourseById(@Payload('courseId') data: number) {
+    return await this.courseService.getCourseById(data);
   }
 }

@@ -4,7 +4,6 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
 
 @Module({
   imports: [
-    ConfigModule,
     ClientsModule.registerAsync([
       {
         name: 'COURSE_SERVICE',

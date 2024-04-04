@@ -29,6 +29,7 @@ model sections {
   endIndex    Int
   isLocked    Boolean
   courses     sections_courses[]
+  tutorials   tutorials[]
 }
 
 model sections_courses {
@@ -38,4 +39,17 @@ model sections_courses {
   section   sections @relation(fields: [sectionId], references: [id])
 
   @@id([sectionId, courseId])
+}
+
+model tutorials {
+  id                 Int      @id @default(autoincrement())
+  index              Int
+  codeLanguage       String
+  descriptionContent String
+  title              String   @db.VarChar(255)
+  type               String
+  bannerIconUrl      String?
+  isCompleted        Boolean
+  sectionId          Int
+  section            sections @relation(fields: [sectionId], references: [id])
 }

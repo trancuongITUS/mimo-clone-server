@@ -40,7 +40,7 @@ export class CourseService {
     return {
       course: {
         ...course,
-        sections: sectionList,
+        sections: sectionList.map((a) => a.section),
       },
     };
   }
