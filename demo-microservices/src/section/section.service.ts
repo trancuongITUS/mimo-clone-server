@@ -6,6 +6,9 @@ export class SectionService {
   constructor(private readonly prismaService: PrismaService) {}
 
   async getAllSections() {
-    return await this.prismaService.sections.findMany();
+    const result = await this.prismaService.sections.findMany();
+    return {
+      sections: result,
+    };
   }
 }

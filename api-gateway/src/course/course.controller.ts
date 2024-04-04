@@ -5,7 +5,6 @@ import {
   Inject,
   Param,
   ParseIntPipe,
-  Query,
 } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
@@ -18,8 +17,7 @@ export class CourseController {
 
   @ApiOperation({ summary: 'Get all courses' })
   @Get()
-  getAllCourses(@Query() query) {
-    console.log(query);
+  getAllCourses() {
     return this.client.send({ cmd: 'get_all_courses' }, {});
   }
 
