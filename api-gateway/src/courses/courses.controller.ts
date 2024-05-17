@@ -1,4 +1,4 @@
-import { Controller, Get, Inject } from "@nestjs/common";
+import { Controller, Get, Inject, Param } from "@nestjs/common";
 import { ClientProxy, MessagePattern } from "@nestjs/microservices";
 
 @Controller("courses")
@@ -8,7 +8,12 @@ export class CoursesController {
     ) {}
 
     @Get()
-    async getHello(): Promise<any> {
+    async getAll(): Promise<any> {
      return this.coursesServiceClient.send({cmd: 'get_all_courses'}, {});
+    }
+
+    @Get(':id')
+    async getById(@Param('id') id) {
+        return this.coursesServiceClient.send({cmd: 'get_course'}, id)
     }
 }

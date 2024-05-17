@@ -40,4 +40,20 @@ export class CoursesService {
         .leftJoinAndSelect('pre_post_interaction_modules.files', 'pre_post_files')
         .getMany();
     }
+
+    async getById(courseId: string): Promise<Courses> {
+        return this.coursesRepository
+        .createQueryBuilder('courses')
+        .leftJoinAndSelect('courses.sections', 'sections')
+        .leftJoinAndSelect('sections.tutorials', 'tutorials')
+        .leftJoinAndSelect('tutorials.chapters', 'chapters')
+        .leftJoinAndSelect('chapters.lessons', 'lessons')
+        .leftJoinAndSelect('lessons.interactionModules', 'interaction_module')
+        .leftJoinAndSelect('interaction_module.files', 'interaction_files')
+        .leftJoinAndSelect('interaction_module.interactionOptions', 'interaction_option')
+        .leftJoinAndSelect('interaction_module.items', 'items')
+        .leftJoinAndSelect('lessons.prePostInteractionModules', 'pre_post_interaction_modules')
+        .leftJoinAndSelect('pre_post_interaction_modules.files', 'pre_post_files')
+        .where("courses.id= :id", { id: courseId }).getOne();
+    }
 }

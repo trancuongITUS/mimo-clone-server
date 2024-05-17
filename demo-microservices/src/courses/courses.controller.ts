@@ -11,4 +11,10 @@ export class CoursesController {
     async newBook(): Promise<Courses[]> {
         return await this.coursesService.getAll();
     }
+
+    @MessagePattern({cmd: 'get_course'})
+    async getBook(courseId: string): Promise<Courses> {
+      //return "getCourse "+courseId;
+      return await this.coursesService.getById(courseId);
+    }
 }
