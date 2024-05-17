@@ -6,10 +6,10 @@ import {
 	ManyToOne,
 	OneToMany,
 } from 'typeorm';
-import { Files } from './Files';
-import { Lessons } from './Lessons';
-import { InteractionOption } from './InteractionOption';
-import { Items } from './Items';
+import { Files } from './Files.entity';
+import { Lessons } from './Lessons.entity';
+import { InteractionOption } from './InteractionOption.entity';
+import { Items } from './Items.entity';
 
 @Index('interaction_module_pkey', ['id'], { unique: true })
 @Entity('interaction_module', { schema: 'public' })

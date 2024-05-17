@@ -7,6 +7,16 @@ import { DemoModule } from './demo/demo.module';
 @Module({
 	imports: [
 		DemoModule,
+		ClientsModule.register([
+			{
+			  name: 'COURSES_SERVICE',
+			  transport: Transport.TCP,
+			  options: {
+				host: 'localhost',
+				port: 3001,
+			  },
+			},
+		  ]),
 	],
 	controllers: [AppController],
 	providers: [AppService],

@@ -1,6 +1,7 @@
 import { DEVELOPMENT, PRODUCTION, TEST } from 'src/constant';
 import { DataSource } from 'typeorm';
 import { databaseConfig } from './database.config';
+import { Courses } from './entities/Courses.entity';
 
 export const databaseProviders = [
 	{
@@ -28,9 +29,10 @@ export const databaseProviders = [
 				password: config.password,
 				database: config.database,
 				entities: [__dirname + '/../**/*.entity{.ts,.js}'],
+				//entities: [__dirname+"./entities/**/*.{ts,js}"],
 				synchronize: true,
 			});
-
+			console.log(__dirname+"./entities/**/*.{ts,js}");
 			return dataSource.initialize();
 		},
 	},

@@ -1,6 +1,6 @@
 import { Column, Entity, Index, JoinColumn, ManyToOne } from 'typeorm';
-import { InteractionModule } from './InteractionModule';
-import { PrePostInteractionModules } from './PrePostInteractionModules';
+import { InteractionModule } from './InteractionModule.entity';
+import { PrePostInteractionModules } from './PrePostInteractionModules.entity';
 
 @Index('files_pkey', ['id'], { unique: true })
 @Entity('files', { schema: 'public' })

@@ -1,5 +1,5 @@
 import { Column, Entity, Index, JoinColumn, ManyToOne } from 'typeorm';
-import { InteractionModule } from './InteractionModule';
+import { InteractionModule } from './InteractionModule.entity';
 
 @Index('interaction_option_pkey', ['id'], { unique: true })
 @Entity('interaction_option', { schema: 'public' })

@@ -10,7 +10,7 @@ async function bootstrap() {
 		{
 			transport: Transport.TCP,
 			options: {
-				port: config.port,
+				port: 3001,
 			},
 		},
 	);

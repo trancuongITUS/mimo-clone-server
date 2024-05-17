@@ -1,6 +1,6 @@
 import { Column, Entity, Index, OneToMany } from 'typeorm';
-import { Sections } from './Sections';
-import { UserCourseTraces } from './UserCourseTraces';
+import { Sections } from './Sections.entity';
+import { UserCourseTraces } from './UserCourseTraces.entity';
 
 @Index('courses_pkey', ['id'], { unique: true })
 @Entity('courses', { schema: 'public' })

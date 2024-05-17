@@ -6,8 +6,8 @@ import {
 	ManyToOne,
 	OneToMany,
 } from 'typeorm';
-import { Tutorials } from './Tutorials';
-import { Lessons } from './Lessons';
+import { Tutorials } from './Tutorials.entity';
+import { Lessons } from './Lessons.entity';
 
 @Index('chapters_pkey', ['id'], { unique: true })
 @Entity('chapters', { schema: 'public' })

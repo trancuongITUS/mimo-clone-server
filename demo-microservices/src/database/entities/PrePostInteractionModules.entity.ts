@@ -6,8 +6,8 @@ import {
 	ManyToOne,
 	OneToMany,
 } from 'typeorm';
-import { Files } from './Files';
-import { Lessons } from './Lessons';
+import { Files } from './Files.entity';
+import { Lessons } from './Lessons.entity';
 
 @Index('pre_post_interaction_modules_pkey', ['id'], { unique: true })
 @Entity('pre_post_interaction_modules', { schema: 'public' })

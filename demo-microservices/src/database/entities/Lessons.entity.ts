@@ -6,9 +6,9 @@ import {
 	ManyToOne,
 	OneToMany,
 } from 'typeorm';
-import { InteractionModule } from './InteractionModule';
-import { Chapters } from './Chapters';
-import { PrePostInteractionModules } from './PrePostInteractionModules';
+import { InteractionModule } from './InteractionModule.entity';
+import { Chapters } from './Chapters.entity';
+import { PrePostInteractionModules } from './PrePostInteractionModules.entity';
 
 @Index('lessons_pkey', ['id'], { unique: true })
 @Entity('lessons', { schema: 'public' })
