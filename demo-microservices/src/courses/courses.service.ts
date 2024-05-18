@@ -2,6 +2,8 @@ import { Inject, Injectable } from "@nestjs/common";
 import { Chapters } from "src/database/entities/Chapters.entity";
 import { Courses } from "src/database/entities/Courses.entity";
 import { Files } from "src/database/entities/Files.entity";
+import { Sections } from "src/database/entities/Sections.entity";
+import { Tutorials } from "src/database/entities/Tutorials.entity";
 import { Repository } from "typeorm";
 
 @Injectable()
@@ -11,7 +13,11 @@ export class CoursesService {
         @Inject('COURSES_REPOSITORY')
         private coursesRepository: Repository<Courses>,
         @Inject('CHAPTERS_REPOSITORY')
-        private chaptersRepository: Repository<Chapters>
+        private chaptersRepository: Repository<Chapters>,
+        @Inject('SECTIONS_REPOSITORY')
+        private sectionsRepository: Repository<Sections>,
+        @Inject('TUTORIALS_REPOSITORY')
+        private tutorialsRepository: Repository<Tutorials>
     ) {}
 
     async getAll(): Promise<Courses[]> {
@@ -72,4 +78,34 @@ export class CoursesService {
         .leftJoinAndSelect('pre_post_interaction_modules.files', 'pre_post_files')
         .where("chapters.id= :id", { id: chapterId }).getOne();
     }
+
+    async getSection(sectionId: string): Promise<Sections> {
+        return this.sectionsRepository
+        .createQueryBuilder('sections')
+        .leftJoinAndSelect('sections.tutorials', 'tutorials')
+        .leftJoinAndSelect('tutorials.chapters', 'chapters')
+        .leftJoinAndSelect('chapters.lessons', 'lessons')
+        .leftJoinAndSelect('lessons.interactionModules', 'interaction_module')
+        .leftJoinAndSelect('interaction_module.files', 'interaction_files')
+        .leftJoinAndSelect('interaction_module.interactionOptions', 'interaction_option')
+        .leftJoinAndSelect('interaction_module.items', 'items')
+        .leftJoinAndSelect('lessons.prePostInteractionModules', 'pre_post_interaction_modules')
+        .leftJoinAndSelect('pre_post_interaction_modules.files', 'pre_post_files')
+        .where("sections.id= :id", { id: sectionId }).getOne();
+    }
+
+    async getTutorial(tutorialId: string): Promise<Tutorials> {
+        return await this.tutorialsRepository
+        .createQueryBuilder('tutorials')
+        .leftJoinAndSelect('tutorials.chapters', 'chapters')
+        .leftJoinAndSelect('chapters.lessons', 'lessons')
+        .leftJoinAndSelect('lessons.interactionModules', 'interaction_module')
+        .leftJoinAndSelect('interaction_module.files', 'interaction_files')
+        .leftJoinAndSelect('interaction_module.interactionOptions', 'interaction_option')
+        .leftJoinAndSelect('interaction_module.items', 'items')
+        .leftJoinAndSelect('lessons.prePostInteractionModules', 'pre_post_interaction_modules')
+        .leftJoinAndSelect('pre_post_interaction_modules.files', 'pre_post_files')
+        .where("tutorials.id= :id", { id: tutorialId }).getOne();
+    }
+    
 }

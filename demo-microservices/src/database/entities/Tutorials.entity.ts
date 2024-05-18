@@ -42,6 +42,9 @@ export class Tutorials {
 	@Column('integer', { name: 'version', nullable: true })
 	version: number | null;
 
+	// @OneToMany(() => Chapters, (chapters) => chapters.tutorial)
+	// chapters: Chapters[];
+
 	@OneToMany(() => Chapters, (chapters) => chapters.tutorial)
 	chapters: Chapters[];
 
