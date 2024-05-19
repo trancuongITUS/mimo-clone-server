@@ -7,6 +7,8 @@ COPY demo-microservices .
 
 RUN npm install
 
+RUN npm run test
+
 RUN npm run build
 
 # Stage 2: Create a lightweight image to serve the built application
