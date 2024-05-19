@@ -3,11 +3,9 @@ FROM node:21-alpine AS build
 
 WORKDIR /app
 
-COPY ./demo-microservices/package*.json ./
+COPY demo-microservices .
 
 RUN npm install
-
-COPY ./demo-microservices .
 
 RUN npm run build
 

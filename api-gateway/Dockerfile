@@ -3,11 +3,9 @@ FROM node:21-alpine AS build
 
 WORKDIR /app
 
-COPY ./api-gateway/package*.json ./
+COPY api-gateway .
 
 RUN npm install
-
-COPY ./api-gateway .
 
 RUN npm run build
 
