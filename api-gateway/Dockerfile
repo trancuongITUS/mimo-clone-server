@@ -1,7 +1,7 @@
 # Stage 1: Build the Next.js application
 FROM node:21-alpine AS build
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
 COPY api-gateway/ .
 
