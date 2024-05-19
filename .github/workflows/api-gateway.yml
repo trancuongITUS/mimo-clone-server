@@ -1,0 +1,15 @@
+name: CI/CD for Next.js
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - api-gateway/**
+
+jobs:
+  build-and-push-docker-image:
+    uses: duongtanton/DACNPM-cicd/.github/workflows/api-gateway.yml@main
+    secrets:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
