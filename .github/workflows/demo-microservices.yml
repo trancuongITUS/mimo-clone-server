@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - demo-microservices/**
+      - .github/workflows/demo-microservices.yml
 
 jobs:
   build-and-push-docker-image:
