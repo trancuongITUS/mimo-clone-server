@@ -1,7 +1,7 @@
 import { BadRequestException, Body, Controller, Get, HttpStatus, Post, Req, UnauthorizedException } from "@nestjs/common";
 import { Request } from 'express';
-import { FirebaseAuthService } from "./auth.service";
-import { UserDTO } from "./dto/user.dto";
+import { FirebaseAuthService } from "../service/auth.service";
+import { UserDTO } from "../dto/user.dto";
 import admin from "src/main";
 
 @Controller('authenticate')
