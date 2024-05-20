@@ -6,6 +6,8 @@ import { ChaptersController } from '../courses/chapters.controller';
 import { SectionsController } from '../courses/sections.controller';
 import { TutorialsController } from '../courses/tutorials.controller';
 import { CoursesController } from '../courses/courses.controller';
+import { AuthController } from 'src/auth/auth.controller';
+import { FirebaseAuthService } from 'src/auth/auth.service';
 
 @Module({
 	imports: [
@@ -34,8 +36,10 @@ import { CoursesController } from '../courses/courses.controller';
 		ChaptersController,
 		SectionsController,
 		TutorialsController,
+		,
+		AuthController,
 	],
-	providers: [DemoService],
+	providers: [DemoService, FirebaseAuthService],
 })
 export class DemoModule {}
 
