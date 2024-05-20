@@ -2,12 +2,12 @@ import { Module } from '@nestjs/common';
 import { DemoController } from './demo.controller';
 import { DemoService } from './demo.service';
 import { ClientsModule, Transport } from '@nestjs/microservices';
-import { CoursesController } from 'src/courses/courses.controller';
-import { ChaptersController } from 'src/courses/chapters.controller';
-import { SectionsController } from 'src/courses/sections.controller';
-import { TutorialsController } from 'src/courses/tutorials.controller';
-import { AuthController } from 'src/auth/auth.controller';
-import { FirebaseAuthService } from 'src/auth/auth.service';
+import { CoursesController } from 'src/controller/courses.controller';
+import { ChaptersController } from 'src/controller/chapters.controller';
+import { SectionsController } from 'src/controller/sections.controller';
+import { TutorialsController } from 'src/controller/tutorials.controller';
+import { AuthController } from 'src/controller/auth.controller';
+import { FirebaseAuthService } from 'src/service/auth.service';
 
 @Module({
     imports: [
