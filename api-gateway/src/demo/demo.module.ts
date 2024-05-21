@@ -9,6 +9,7 @@ import { CoursesController } from '../controller/courses.controller';
 import { AuthController } from 'src/controller/auth.controller';
 import { FirebaseAuthService } from 'src/service/auth.service';
 import { HttpModule } from '@nestjs/axios';
+import { FirebaseAdmin } from 'firebase.setup';
 
 @Module({
 	imports: [
@@ -40,7 +41,7 @@ import { HttpModule } from '@nestjs/axios';
 		TutorialsController,
 		AuthController,
 	],
-	providers: [DemoService, FirebaseAuthService],
+	providers: [DemoService, FirebaseAuthService, FirebaseAdmin],
 })
 export class DemoModule {}
 
