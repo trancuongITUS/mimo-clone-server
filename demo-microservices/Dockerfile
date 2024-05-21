@@ -7,7 +7,7 @@ COPY demo-microservices/ .
 
 RUN npm install
 
-# RUN npm run test
+RUN npm test courses
 
 RUN npm run build
 

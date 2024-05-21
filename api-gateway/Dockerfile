@@ -7,7 +7,8 @@ COPY api-gateway/ .
 
 RUN npm install
 
-# RUN npm run test
+RUN npm test courses
+RUN npm run test:e2e
 
 RUN npm run build
 
