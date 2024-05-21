@@ -8,6 +8,7 @@ import { TutorialsController } from '../controller/tutorials.controller';
 import { CoursesController } from '../controller/courses.controller';
 import { AuthController } from 'src/controller/auth.controller';
 import { FirebaseAuthService } from 'src/service/auth.service';
+import { HttpModule } from '@nestjs/axios';
 
 @Module({
 	imports: [
@@ -29,6 +30,7 @@ import { FirebaseAuthService } from 'src/service/auth.service';
 				},
 			},
 		]),
+		HttpModule,
 	],
 	controllers: [
 		DemoController,
@@ -36,7 +38,6 @@ import { FirebaseAuthService } from 'src/service/auth.service';
 		ChaptersController,
 		SectionsController,
 		TutorialsController,
-		,
 		AuthController,
 	],
 	providers: [DemoService, FirebaseAuthService],

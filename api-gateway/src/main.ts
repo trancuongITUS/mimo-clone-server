@@ -17,7 +17,7 @@ async function bootstrap() {
 			clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
 			projectId: process.env.FIREBASE_PROJECT_ID,
 		} as Partial<admin.ServiceAccount>),
-		databaseURL: process.env.FIREBASE_PRIVATE_KEY
+		databaseURL: process.env.FIREBASE_PRIVATE_KEY,
 	});
 	/* Add global interceptors for application */
 	app.useGlobalInterceptors(new LoggingInterceptor());
@@ -33,3 +33,4 @@ async function bootstrap() {
 }
 export default admin;
 bootstrap();
+
