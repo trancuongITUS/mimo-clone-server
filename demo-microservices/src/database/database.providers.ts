@@ -29,12 +29,11 @@ export const databaseProviders = [
 				username: config.username,
 				password: config.password,
 				database: config.database,
-				entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-				//entities: [__dirname+"./entities/**/*.{ts,js}"],
+				// entities: [__dirname + '/../**/*.entity{.ts,.js}'],
+				entities: [__dirname + './entities/**/*.{ts,js}'],
 				synchronize: true,
 				ssl: config.ssl,
 			});
-			console.log(__dirname+"./entities/**/*.{ts,js}");
 			return dataSource.initialize();
 		},
 	},
