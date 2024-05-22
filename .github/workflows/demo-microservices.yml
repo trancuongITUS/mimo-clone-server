@@ -11,7 +11,6 @@ on:
 jobs:
   ci:
     uses: duongtanton/DACNPM-cicd/.github/workflows/demo-microservices.yml@main
-    permissions: write-all
     secrets:
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
