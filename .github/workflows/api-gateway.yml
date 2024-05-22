@@ -9,7 +9,7 @@ on:
       - .github/workflows/api-gateway.yml
 
 jobs:
-  build-and-push-docker-image:
+  ci:
     uses: duongtanton/DACNPM-cicd/.github/workflows/api-gateway.yml@main
     secrets:
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
