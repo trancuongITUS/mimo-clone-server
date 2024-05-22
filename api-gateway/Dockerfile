@@ -3,7 +3,7 @@ FROM node:21-alpine AS build
 
 WORKDIR /app
 
-COPY api-gateway/ .
+COPY . .
 
 RUN npm install
 
