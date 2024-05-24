@@ -2,10 +2,14 @@ import { Module } from '@nestjs/common';
 import { DemoController } from './demo.controller';
 import { DemoService } from './demo.service';
 import { ClientsModule, Transport } from '@nestjs/microservices';
-import { ChaptersController } from '../courses/chapters.controller';
-import { SectionsController } from '../courses/sections.controller';
-import { TutorialsController } from '../courses/tutorials.controller';
-import { CoursesController } from '../courses/courses.controller';
+import { ChaptersController } from '../controller/chapters.controller';
+import { SectionsController } from '../controller/sections.controller';
+import { TutorialsController } from '../controller/tutorials.controller';
+import { CoursesController } from '../controller/courses.controller';
+import { AuthController } from 'src/controller/auth.controller';
+import { FirebaseAuthService } from 'src/service/auth.service';
+import { HttpModule } from '@nestjs/axios';
+import { FirebaseAdmin } from 'firebase.setup';
 
 @Module({
 	imports: [
@@ -27,6 +31,7 @@ import { CoursesController } from '../courses/courses.controller';
 				},
 			},
 		]),
+		HttpModule,
 	],
 	controllers: [
 		DemoController,
@@ -34,8 +39,9 @@ import { CoursesController } from '../courses/courses.controller';
 		ChaptersController,
 		SectionsController,
 		TutorialsController,
+		AuthController,
 	],
-	providers: [DemoService],
+	providers: [DemoService, FirebaseAuthService, FirebaseAdmin],
 })
 export class DemoModule {}
 

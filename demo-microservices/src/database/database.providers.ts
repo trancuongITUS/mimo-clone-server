@@ -8,7 +8,7 @@ export const databaseProviders = [
 		provide: 'DATA_SOURCE',
 		useFactory: async () => {
 			let config: any;
-			switch (process.env.NODE_ENV) {
+			switch (process.env.NODE_ENV.trim()) {
 				case DEVELOPMENT:
 					config = databaseConfig.development;
 					break;
@@ -21,6 +21,7 @@ export const databaseProviders = [
 				default:
 					config = databaseConfig.development;
 			}
+			console.log(config);
 			const dataSource = new DataSource({
 				type: config.type,
 				host: config.host,
@@ -28,11 +29,11 @@ export const databaseProviders = [
 				username: config.username,
 				password: config.password,
 				database: config.database,
-				entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-				//entities: [__dirname+"./entities/**/*.{ts,js}"],
+				// entities: [__dirname + '/../**/*.entity{.ts,.js}'],
+				entities: [__dirname + './entities/**/*.{ts,js}'],
 				synchronize: true,
+				ssl: config.ssl,
 			});
-			console.log(__dirname+"./entities/**/*.{ts,js}");
 			return dataSource.initialize();
 		},
 	},
