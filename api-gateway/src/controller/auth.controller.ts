@@ -38,7 +38,7 @@ export class AuthController {
 		}
 	}
 
-	@Post('/signin')
+	@Post('/signup')
 	public async createUser(
 		@Req() req: Request,
 		@Body() userDto: UserDTO,
