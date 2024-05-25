@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import { AppModule } from './app.module';
 import configuration from './configuration/configuration';
+import { connect as connectToEventStore } from './evenstore';
 
 async function bootstrap() {
 	const config = configuration();
@@ -14,7 +15,7 @@ async function bootstrap() {
 			},
 		},
 	);
-
+	await connectToEventStore();
 	await app.listen();
 }
 
