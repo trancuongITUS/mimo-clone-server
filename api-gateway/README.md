@@ -1,3 +1,8 @@
+https://www.eventstore.com/eventstoredb
+cài eventstoreDb và nhớ npm i để tải nest cqrs 
+
+
+--------------------------------------------------------------------------------
 # Hướng dẫn Auth
 
 gọi lên [POST] /authenticate/signup (vd: localhost:8080/authenticate/signup)
