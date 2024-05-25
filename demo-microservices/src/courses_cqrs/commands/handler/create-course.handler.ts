@@ -14,7 +14,20 @@ export class CreateCourseHandler
     ) {}
 
   async execute(command: CreateCourseCommand): Promise<Courses> {
-    const course = this.repository.create(command.createCourseDto);
+    const { name, description, isPublished, iconUrl } = command.createCourseDto;
+    const course = new Courses();
+    course.name = name;
+    course.description = description;
+    course.isPublished = isPublished;
+    course.iconUrl = iconUrl;
+    course.id=this.mongoObjectId();
     return this.repository.save(course);
   }
+
+  private mongoObjectId = function () {
+    var timestamp = (new Date().getTime() / 1000 | 0).toString(16);
+    return timestamp + 'xxxxxxxxxxxxxxxx'.replace(/[x]/g, function() {
+        return (Math.random() * 16 | 0).toString(16);
+    }).toLowerCase();
+};
 }
