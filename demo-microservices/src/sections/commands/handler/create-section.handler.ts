@@ -4,6 +4,7 @@ import { Repository } from "typeorm";
 import { Sections } from "src/database/entities/Sections.entity";
 import { Inject } from "@nestjs/common";
 import { Courses } from "src/database/entities/Courses.entity";
+import { SectionCreatedEvent } from "src/sections/event/sections.event";
 
 @CommandHandler(CreateSectionCommand)
 export class CreateSectionHandler
@@ -33,7 +34,7 @@ export class CreateSectionHandler
   private async sendEvent(section: Sections, eventBus: EventBus) {
     if(section !== undefined) {
         console.log("send event SectionCreatedEvent");
-        // eventBus.publish(new CourseCreatedEvent(course));
+         eventBus.publish(new SectionCreatedEvent(section));
         //     console.log("sent");
     }
 }

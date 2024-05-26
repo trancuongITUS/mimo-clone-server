@@ -7,13 +7,13 @@ import { client } from "src/evenstore";
 export class CourseCreatedHandler implements IEventHandler<CourseCreatedEvent> {
 
     handle(event: CourseCreatedEvent) {
-        var courseId = event.course.id;
+        var stream = "COURSECREATED";
        var createdEvent = jsonEvent({
         type: "course created",
         data: {
             courseId: event.course.id
         }
        });
-        client.appendToStream(courseId, createdEvent);
+        client.appendToStream(stream, createdEvent);
     }
 }

@@ -7,13 +7,13 @@ import { SectionCreatedEvent } from "../sections.event";
 export class SectionCreatedHandler implements IEventHandler<SectionCreatedEvent> {
 
     handle(event: SectionCreatedEvent) {
-        var sectionId = event.section.id;
+        var stream = "SECTIONCREATED";
        var createdEvent = jsonEvent({
         type: "section created",
         data: {
             sectionId: event.section.id
         }
        });
-        client.appendToStream(sectionId, createdEvent);
-    }
+        client.appendToStream(stream, [createdEvent]);
+      }
 }
