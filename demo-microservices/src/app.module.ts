@@ -4,12 +4,13 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import configuration from './configuration/configuration';
 import { DatabaseModule } from './database/database.module';
-import { CoursesModule } from './courses/courses.module';
-import { CoursesCQRSModule } from './courses_cqrs/courses.module';
+import { CoursesCQRSModule } from './courses/courses.module';
+import { SectionsCQRSModule } from './sections/sections.module';
 
 @Module({
 	imports: [
 		CoursesCQRSModule,
+		SectionsCQRSModule,
 		ConfigModule.forRoot({
 			load: [configuration],
 			cache: true,

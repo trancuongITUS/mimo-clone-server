@@ -3,7 +3,7 @@ import { CreateCourseCommand } from '../course.command';
 import { Inject } from '@nestjs/common';
 import { Courses } from 'src/database/entities/Courses.entity';
 import { Repository } from 'typeorm';
-import { CourseCreatedEvent } from 'src/courses_cqrs/event/courses.event';
+import { CourseCreatedEvent } from 'src/courses/event/courses.event';
 
 
 @CommandHandler(CreateCourseCommand)

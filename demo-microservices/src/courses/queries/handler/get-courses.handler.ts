@@ -1,5 +1,5 @@
 import { IQueryHandler, QueryHandler } from "@nestjs/cqrs";
-import { GetChaptersQuery, GetCourseByIdQuery, GetCoursesQuery, GetSectionsQuery, GetTutorialsQuery } from "../courses.queries";
+import { GetChaptersQuery, GetCourseByIdQuery, GetCoursesQuery, GetTutorialsQuery } from "../courses.queries";
 import { Repository } from "typeorm";
 import { Courses } from "src/database/entities/Courses.entity";
 import { Inject } from "@nestjs/common";
@@ -76,27 +76,6 @@ export class GetChaptersHandler implements IQueryHandler<GetChaptersQuery> {
     }
 }
 
-@QueryHandler(GetSectionsQuery)
-export class GetSectionsHandler implements IQueryHandler<GetSectionsQuery> {
-    constructor (
-        @Inject('SECTIONS_REPOSITORY')
-        private readonly repository: Repository<Sections>
-    ) {}
-    execute(query: GetSectionsQuery): Promise<Sections> {
-        return this.repository
-        .createQueryBuilder('sections')
-        .leftJoinAndSelect('sections.tutorials', 'tutorials')
-        .leftJoinAndSelect('tutorials.chapters', 'chapters')
-        .leftJoinAndSelect('chapters.lessons', 'lessons')
-        .leftJoinAndSelect('lessons.interactionModules', 'interaction_module')
-        .leftJoinAndSelect('interaction_module.files', 'interaction_files')
-        .leftJoinAndSelect('interaction_module.interactionOptions', 'interaction_option')
-        .leftJoinAndSelect('interaction_module.items', 'items')
-        .leftJoinAndSelect('lessons.prePostInteractionModules', 'pre_post_interaction_modules')
-        .leftJoinAndSelect('pre_post_interaction_modules.files', 'pre_post_files')
-        .where("sections.id= :id", { id: query.sectionId }).getOne();
-    }
-}
 
 @QueryHandler(GetTutorialsQuery)
 export class GetTurorailsHandler implements IQueryHandler<GetTutorialsQuery> {

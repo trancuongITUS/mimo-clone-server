@@ -8,6 +8,3 @@ export class GetChaptersQuery {
 export class GetTutorialsQuery {
     constructor(public readonly tutorialId: string) {}
 }
-export class GetSectionsQuery {
-    constructor(public readonly sectionId: string) {}
-}
