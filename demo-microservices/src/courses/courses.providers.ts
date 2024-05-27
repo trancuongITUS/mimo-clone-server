@@ -15,14 +15,4 @@ export const coursesProviders = [
         useFactory: (dataSource: DataSource) => dataSource.getRepository(Chapters),
         inject: ['DATA_SOURCE']
     },
-    {
-        provide: 'SECTIONS_REPOSITORY',
-        useFactory: (dataSource: DataSource) => dataSource.getRepository(Sections),
-        inject: ['DATA_SOURCE']
-    },
-    {
-        provide: 'TUTORIALS_REPOSITORY',
-        useFactory: (dataSource: DataSource) => dataSource.getRepository(Tutorials),
-        inject: ['DATA_SOURCE']
-    }
 ]

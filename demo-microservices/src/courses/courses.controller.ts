@@ -38,9 +38,4 @@ export class CoursesController {
 		return await this.querybus.execute(new GetChaptersQuery(chapterId));
 	}
 
-
-	@MessagePattern({ cmd: 'get_tutorial' })
-	async getTutorial(tutorialId: string): Promise<Tutorials> {
-		return await this.querybus.execute(new GetTutorialsQuery(tutorialId));
-	}
 }
