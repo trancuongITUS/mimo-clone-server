@@ -6,24 +6,26 @@ import { CreateCourseDto } from 'src/dto/request/createCourse.dto';
 @Controller('courses')
 export class CoursesController {
 	constructor(
-		@Inject('COURSES_SERVICE')
-		private readonly coursesServiceClient: ClientProxy,
+		@Inject('QUERY_SERVICE')
+		private readonly coursesQueryClient: ClientProxy,
+		@Inject('COMMAND_SERVICE')
+		private readonly coursesCommandClient: ClientProxy,
 	) {}
 
 	@Get()
 	@Auth('user')
 	async getAll(): Promise<any> {
-		return this.coursesServiceClient.send({ cmd: 'get_all_courses' }, {});
+		return this.coursesQueryClient.send({ cmd: 'get_all_courses' }, {});
 	}
 
 	@Get(':id')
 	async getById(@Param('id') id) {
-		return this.coursesServiceClient.send({ cmd: 'get_course' }, id);
+		return this.coursesQueryClient.send({ cmd: 'get_course' }, id);
 	}
 
 	@Post()
 	async createCourse(@Body() createCourseDto: CreateCourseDto): Promise<any> {
-		return this.coursesServiceClient.send({ cmd: 'create_course'}, createCourseDto);
+		return this.coursesCommandClient.send({ cmd: 'create_course'}, createCourseDto);
 	}
 }
 

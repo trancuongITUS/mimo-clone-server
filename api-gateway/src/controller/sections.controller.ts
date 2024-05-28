@@ -5,17 +5,18 @@ import { CreateSectionDto } from "src/dto/request/createSection.dto";
 @Controller("sections")
 export class SectionsController {
     constructor(
-        @Inject("COURSES_SERVICE") private readonly coursesServiceClient: ClientProxy
+        @Inject("QUERY_SERVICE") private readonly coursesQueryClient: ClientProxy,
+        @Inject("COMMAND_SERVICE") private readonly coursesCommandClient: ClientProxy
     ) {}
 
     @Get(':id')
     async getById(@Param('id') id) {
-        return this.coursesServiceClient.send({cmd: 'get_section'}, id)
+        return this.coursesQueryClient.send({cmd: 'get_section'}, id)
     }
 
    
 	@Post()
 	async createSection(@Body() createSectionDto: CreateSectionDto): Promise<any> {
-		return this.coursesServiceClient.send({ cmd: 'create_section'}, createSectionDto);
+		return this.coursesCommandClient.send({ cmd: 'create_section'}, createSectionDto);
 	}
 }

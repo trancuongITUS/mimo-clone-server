@@ -4,7 +4,7 @@ import { ClientProxy } from "@nestjs/microservices";
 @Controller("chapters")
 export class ChaptersController {
     constructor(
-        @Inject("COURSES_SERVICE") private readonly coursesServiceClient: ClientProxy
+        @Inject("QUERY_SERVICE") private readonly coursesServiceClient: ClientProxy
     ) {}
 
     @Get(':id')

@@ -5,16 +5,17 @@ import { CreateTutorialDto } from "src/dto/request/createTutorial.dto";
 @Controller("tutorials")
 export class TutorialsController {
     constructor(
-        @Inject("COURSES_SERVICE") private readonly coursesServiceClient: ClientProxy
+        @Inject("QUERY_SERVICE") private readonly coursesQueryClient: ClientProxy,
+        @Inject("COMMAND_SERVICE") private readonly coursesCommandClient: ClientProxy,
     ) {}
 
     @Get(':id')
     async getById(@Param('id') id) {
-        return this.coursesServiceClient.send({cmd: 'get_tutorial'}, id)
+        return this.coursesQueryClient.send({cmd: 'get_tutorial'}, id)
     }
 
     @Post()
 	async createTutorial(@Body() createTutorialDto: CreateTutorialDto): Promise<any> {
-		return this.coursesServiceClient.send({ cmd: 'create_tutorial'}, createTutorialDto);
+		return this.coursesCommandClient.send({ cmd: 'create_tutorial'}, createTutorialDto);
 	}
 }
