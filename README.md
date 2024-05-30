@@ -45,7 +45,7 @@ $ npx prisma generate
 $ npm run start:dev
 ```
 
-## Chạy api-gateway
+## Chạy Api-Gateway
 
 ```bash
 # Đứng ở vị trí folder api-gateway
