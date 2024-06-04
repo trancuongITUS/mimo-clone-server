@@ -30,8 +30,24 @@ export class CoursesController {
 		return await this.coursesService.getSection(sectionId);
 	}
 
+	@MessagePattern({ cmd: 'get_section_by_courseId' })
+	async getSectionByBoard(courseId: string): Promise<Sections[]> {
+		return await this.coursesService.getSectionByCourseId(courseId);
+	}
+
 	@MessagePattern({ cmd: 'get_tutorial' })
 	async getTutorial(tutorialId: string): Promise<Tutorials> {
 		return await this.coursesService.getTutorial(tutorialId);
 	}
+
+	@MessagePattern({ cmd: 'get_tutorials_by_sectionId' })
+	async getTutorialBySectionId(sectionId: string): Promise<Tutorials[]> {
+		return await this.coursesService.getTutorialBySectionId(sectionId);
+	}
+
+	@MessagePattern({ cmd: 'get_chapters_by_tutorialId' })
+	async getChapterByTutorialId(tutorialId: string): Promise<Chapters[]> {
+		return await this.coursesService.getChapterByByTutorialId(tutorialId);
+	}
 }
+
