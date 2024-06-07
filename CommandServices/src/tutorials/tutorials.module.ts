@@ -5,8 +5,9 @@ import { DatabaseModule } from "src/database/database.module";
 import { TutorialCreatedHandler } from "./events/handler/tutorial-created.handler";
 import { TutorialsController } from "./tutorials.controller";
 import { tutorialsProviders } from "./tutorials.provider";
+import { UpdateTutorialHandler } from "./commands/handler/update-tutorial.handler";
 
-export const CommandHandlers = [CreateTutorialHandler];
+export const CommandHandlers = [CreateTutorialHandler, UpdateTutorialHandler];
 export const EventHandlers = [TutorialCreatedHandler];
 
 @Module({

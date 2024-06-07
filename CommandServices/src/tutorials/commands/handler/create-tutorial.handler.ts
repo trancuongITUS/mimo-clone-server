@@ -31,7 +31,7 @@ export class CreateTutorialHandler
     tutorial.section = section;
     tutorial.id = this.mongoObjectId();
     this.repository.save(tutorial);
-    this.sendEvent(tutorial,this.eventBus);
+    //this.sendEvent(tutorial,this.eventBus);
     return tutorial;
   }
 
