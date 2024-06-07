@@ -5,10 +5,12 @@ import {
 	Inject,
 	Param,
 	Post,
+	Put,
 	Query,
 } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { CreateSectionDto } from 'src/dto/request/createSection.dto';
+import { UpdateSectionDto } from 'src/dto/request/updateSection.dto';
 
 @Controller('sections')
 export class SectionsController {
@@ -41,5 +43,15 @@ export class SectionsController {
 			createSectionDto,
 		);
 	}
+
+	@Put(':id')
+	async updateSection(@Param('id') id, @Body() updateSectionDto: UpdateSectionDto): Promise<any> {
+		updateSectionDto.sectionId=id;
+		return this.coursesCommandClient.send(
+			{ cmd: 'update_section' },
+			updateSectionDto
+		);
+	}
+
 }
 
