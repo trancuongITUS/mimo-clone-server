@@ -1,14 +1,24 @@
-import { Controller, Inject, Get, Param } from "@nestjs/common";
-import { ClientProxy } from "@nestjs/microservices";
+import { Controller, Inject, Get, Param, Query } from '@nestjs/common';
+import { ClientProxy } from '@nestjs/microservices';
 
-@Controller("chapters")
+@Controller('chapters')
 export class ChaptersController {
-    constructor(
-        @Inject("QUERY_SERVICE") private readonly coursesServiceClient: ClientProxy
-    ) {}
+	constructor(
+		@Inject('QUERY_SERVICE')
+		private readonly coursesServiceClient: ClientProxy,
+	) {}
 
-    @Get(':id')
-    async getById(@Param('id') id) {
-        return this.coursesServiceClient.send({cmd: 'get_chapter'}, id)
-    }
+	@Get(':id')
+	async getById(@Param('id') id) {
+		return this.coursesServiceClient.send({ cmd: 'get_chapter' }, id);
+	}
+
+	@Get()
+	async getChapterByTutorialId(@Query('tutorialId') tutorialId) {
+		return this.coursesServiceClient.send(
+			{ cmd: 'get_chapters_by_tutorialId' },
+			tutorialId,
+		);
+	}
 }
+

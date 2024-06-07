@@ -25,7 +25,10 @@ export class CoursesController {
 
 	@Post()
 	async createCourse(@Body() createCourseDto: CreateCourseDto): Promise<any> {
-		return this.coursesCommandClient.send({ cmd: 'create_course'}, createCourseDto);
+		return this.coursesCommandClient.send(
+			{ cmd: 'create_course' },
+			createCourseDto,
+		);
 	}
 }
 
