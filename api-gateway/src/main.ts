@@ -11,6 +11,7 @@ declare const module: any;
 async function bootstrap() {
 	dotenv.config();
 	const app = await NestFactory.create(AppModule);
+	app.enableCors();
 	/* Add global interceptors for application */
 	app.useGlobalInterceptors(new LoggingInterceptor());
 	app.useGlobalInterceptors(new TransformInterceptor());

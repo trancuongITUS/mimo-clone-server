@@ -23,11 +23,19 @@ import { FirebaseAdmin } from 'firebase.setup';
 				},
 			},
 			{
-				name: 'COURSES_SERVICE',
+				name: 'QUERY_SERVICE',
 				transport: Transport.TCP,
 				options: {
 					host: 'localhost',
 					port: 3001,
+				},
+			},
+			{
+				name: 'COMMAND_SERVICE',
+				transport: Transport.TCP,
+				options: {
+					host: 'localhost',
+					port: 3002,
 				},
 			},
 		]),
