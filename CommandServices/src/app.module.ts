@@ -7,6 +7,7 @@ import { DatabaseModule } from './database/database.module';
 import { CoursesCQRSModule } from './courses/courses.module';
 import { SectionsCQRSModule } from './sections/sections.module';
 import { TutorialsCQRSModule } from './tutorials/tutorials.module';
+import { CoursesTraceModule } from './courses-trace/courses-trace.module';
 
 @Module({
 	imports: [
@@ -19,6 +20,7 @@ import { TutorialsCQRSModule } from './tutorials/tutorials.module';
 			isGlobal: true,
 		}),
 		DatabaseModule,
+		CoursesTraceModule,
 	],
 	controllers: [AppController],
 	providers: [AppService],

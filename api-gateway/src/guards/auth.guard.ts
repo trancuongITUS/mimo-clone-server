@@ -16,6 +16,8 @@ export class AuthGuard implements CanActivate {
 
 	async canActivate(context: ExecutionContext): Promise<boolean> {
 		const app = this.admin.setup();
+		const request = context.switchToHttp().getRequest();
+
 		const idToken = context
 			.getArgs()[0]
 			?.headers?.authorization?.split(' ')[1];
@@ -26,7 +28,7 @@ export class AuthGuard implements CanActivate {
 		);
 		try {
 			const claims = await app.auth().verifyIdToken(idToken);
-
+			request.user = claims;
 			if (permissions[0] === 'user' || claims.role === permissions[0]) {
 				return true;
 			}

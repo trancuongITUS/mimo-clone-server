@@ -8,7 +8,9 @@ import {
 	GetChaptersQuery,
 	GetCourseByIdQuery,
 	GetCoursesQuery,
+	GetTraceCourses,
 } from './queries/courses.queries';
+import { UserCourseTraces } from 'src/database/entities/UserCourseTraces.entity';
 
 @Controller()
 export class CoursesController {
@@ -38,6 +40,13 @@ export class CoursesController {
 	async getChapterByTutorialId(tutorialId: string): Promise<Chapters[]> {
 		return await this.querybus.execute(
 			new GetChapterByTutorialId(tutorialId),
+		);
+	}
+
+	@MessagePattern({ cmd: 'get_trace_courses' })
+	async getTraceCourses({ courseId, userId }): Promise<UserCourseTraces> {
+		return await this.querybus.execute(
+			new GetTraceCourses(courseId, userId),
 		);
 	}
 }

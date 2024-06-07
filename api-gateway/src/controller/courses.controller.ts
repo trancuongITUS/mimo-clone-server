@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Inject, Param, Post } from '@nestjs/common';
+import {
+	Body,
+	Controller,
+	Get,
+	Inject,
+	Param,
+	Post,
+	Req,
+} from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { Auth } from 'src/decorators/auth.decorator';
 import { CreateCourseDto } from 'src/dto/request/createCourse.dto';
