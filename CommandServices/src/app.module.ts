@@ -10,6 +10,7 @@ import { TutorialsCQRSModule } from './tutorials/tutorials.module';
 import { ChaptersCQRSModule } from './chapters/chapters.module';
 import { InteractionModulesCQRSModule } from './interactionModules/interactionModules.module';
 import { PrePostInteractionModulesCQRSModule } from './prePostInteractionModules/prePostInteractionModule.module';
+import { InteractionOptionsCQRSModule } from './interactionOptions/interacitonOptions.module';
 
 @Module({
 	imports: [
@@ -19,6 +20,7 @@ import { PrePostInteractionModulesCQRSModule } from './prePostInteractionModules
 		ChaptersCQRSModule,
 		InteractionModulesCQRSModule,
 		PrePostInteractionModulesCQRSModule,
+		InteractionOptionsCQRSModule,
 		ConfigModule.forRoot({
 			load: [configuration],
 			cache: true,
