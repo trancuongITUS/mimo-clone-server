@@ -14,6 +14,7 @@ import { InteractionModulesController } from 'src/controller/interactionModules.
 import { PrePostInteractionModulesController } from 'src/controller/prePostInteractionModules.controller';
 import { InteractionOptionController } from 'src/controller/interactionOptions.controller';
 import { FilesController } from 'src/controller/files.controller';
+import { ItemsController } from 'src/controller/items.controller';
 
 @Module({
 	imports: [
@@ -56,6 +57,7 @@ import { FilesController } from 'src/controller/files.controller';
 		InteractionOptionController,
 		FilesController,
 		AuthController,
+		ItemsController
 	],
 	providers: [DemoService, FirebaseAuthService, FirebaseAdmin],
 })
