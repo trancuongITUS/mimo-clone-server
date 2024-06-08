@@ -8,9 +8,9 @@ export const databaseConfig: IDatabaseConfig = {
 		host: process.env.DB_HOST || 'localhost',
 		port: process.env.DB_PORT || 5432,
 		username: process.env.DB_USERNAME || 'postgres',
-		password: process.env.DB_PASSWORD || 'postgres',
+		password: process.env.DB_PASSWORD || '1234',
 		database: process.env.DB_NAME || 'Mimo',
-		ssl: true,
+		ssl: false,
 	},
 	/** TODO: change the environment of test and production environment. */
 	test: {

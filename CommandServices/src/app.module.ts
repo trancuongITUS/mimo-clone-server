@@ -7,12 +7,14 @@ import { DatabaseModule } from './database/database.module';
 import { CoursesCQRSModule } from './courses/courses.module';
 import { SectionsCQRSModule } from './sections/sections.module';
 import { TutorialsCQRSModule } from './tutorials/tutorials.module';
+import { ChaptersCQRSModule } from './chapters/chapters.module';
 
 @Module({
 	imports: [
 		CoursesCQRSModule,
 		SectionsCQRSModule,
 		TutorialsCQRSModule,
+		ChaptersCQRSModule,
 		ConfigModule.forRoot({
 			load: [configuration],
 			cache: true,

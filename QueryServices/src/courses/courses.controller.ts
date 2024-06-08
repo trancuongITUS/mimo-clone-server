@@ -28,17 +28,17 @@ export class CoursesController {
 		return await this.querybus.execute(new GetCourseByIdQuery(courseId));
 	}
 
-	@MessagePattern({ cmd: 'get_chapter' })
-	async getChapter(chapterId: string): Promise<Chapters> {
-		console.log('get chapter');
-		return await this.querybus.execute(new GetChaptersQuery(chapterId));
-	}
+	// @MessagePattern({ cmd: 'get_chapter' })
+	// async getChapter(chapterId: string): Promise<Chapters> {
+	// 	console.log('get chapter');
+	// 	return await this.querybus.execute(new GetChaptersQuery(chapterId));
+	// }
 
-	@MessagePattern({ cmd: 'get_chapters_by_tutorialId' })
-	async getChapterByTutorialId(tutorialId: string): Promise<Chapters[]> {
-		return await this.querybus.execute(
-			new GetChapterByTutorialId(tutorialId),
-		);
-	}
+	// @MessagePattern({ cmd: 'get_chapters_by_tutorialId' })
+	// async getChapterByTutorialId(tutorialId: string): Promise<Chapters[]> {
+	// 	return await this.querybus.execute(
+	// 		new GetChapterByTutorialId(tutorialId),
+	// 	);
+	// }
 }
 
