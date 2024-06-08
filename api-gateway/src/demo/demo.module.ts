@@ -11,6 +11,7 @@ import { FirebaseAuthService } from 'src/service/auth.service';
 import { HttpModule } from '@nestjs/axios';
 import { FirebaseAdmin } from 'firebase.setup';
 import { InteractionModulesController } from 'src/controller/interactionModules.controller';
+import { PrePostInteractionModulesController } from 'src/controller/prePostInteractionModules.controller';
 
 @Module({
 	imports: [
@@ -49,6 +50,7 @@ import { InteractionModulesController } from 'src/controller/interactionModules.
 		SectionsController,
 		TutorialsController,
 		InteractionModulesController,
+		PrePostInteractionModulesController,
 		AuthController,
 	],
 	providers: [DemoService, FirebaseAuthService, FirebaseAdmin],

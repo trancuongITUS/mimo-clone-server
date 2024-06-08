@@ -9,6 +9,7 @@ import { SectionsCQRSModule } from './sections/sections.module';
 import { TutorialsCQRSModule } from './tutorials/tutorials.module';
 import { ChaptersCQRSModule } from './chapters/chapters.module';
 import { InteractionModulesCQRSModule } from './interactionModules/interactionModules.module';
+import { PrePostInteractionModulesCQRSModule } from './prePostInteractionModules/prePostInteractionModule.module';
 
 @Module({
 	imports: [
@@ -17,6 +18,7 @@ import { InteractionModulesCQRSModule } from './interactionModules/interactionMo
 		TutorialsCQRSModule,
 		ChaptersCQRSModule,
 		InteractionModulesCQRSModule,
+		PrePostInteractionModulesCQRSModule,
 		ConfigModule.forRoot({
 			load: [configuration],
 			cache: true,
