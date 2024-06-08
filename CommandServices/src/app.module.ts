@@ -13,6 +13,7 @@ import { PrePostInteractionModulesCQRSModule } from './prePostInteractionModules
 import { InteractionOptionsCQRSModule } from './interactionOptions/interacitonOptions.module';
 import { FilesCQRSModule } from './files/files.module';
 import { ItemsCQRSModule } from './item/Item.module';
+import { LessonsCQRSModule } from './lessons/lesson.module';
 
 @Module({
 	imports: [
@@ -25,6 +26,7 @@ import { ItemsCQRSModule } from './item/Item.module';
 		InteractionOptionsCQRSModule,
 		FilesCQRSModule,
 		ItemsCQRSModule,
+		LessonsCQRSModule,
 		ConfigModule.forRoot({
 			load: [configuration],
 			cache: true,
