@@ -17,7 +17,7 @@ export class UpdateChapterHandler
 
   async execute(command: UpdateChapterCommand): Promise<Chapters> {
     const { chapterId, type, title, index, tutorialId} = command.updateChapterDto;
-    const chapter = new Chapters;
+    const chapter = new Chapters();
     chapter.index=index;
     chapter.title=title;
     chapter.type=type;
