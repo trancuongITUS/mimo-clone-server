@@ -13,6 +13,7 @@ import { FirebaseAdmin } from 'firebase.setup';
 import { InteractionModulesController } from 'src/controller/interactionModules.controller';
 import { PrePostInteractionModulesController } from 'src/controller/prePostInteractionModules.controller';
 import { InteractionOptionController } from 'src/controller/interactionOptions.controller';
+import { FilesController } from 'src/controller/files.controller';
 
 @Module({
 	imports: [
@@ -53,6 +54,7 @@ import { InteractionOptionController } from 'src/controller/interactionOptions.c
 		InteractionModulesController,
 		PrePostInteractionModulesController,
 		InteractionOptionController,
+		FilesController,
 		AuthController,
 	],
 	providers: [DemoService, FirebaseAuthService, FirebaseAdmin],

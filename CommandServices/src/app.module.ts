@@ -11,6 +11,7 @@ import { ChaptersCQRSModule } from './chapters/chapters.module';
 import { InteractionModulesCQRSModule } from './interactionModules/interactionModules.module';
 import { PrePostInteractionModulesCQRSModule } from './prePostInteractionModules/prePostInteractionModule.module';
 import { InteractionOptionsCQRSModule } from './interactionOptions/interacitonOptions.module';
+import { FilesCQRSModule } from './files/files.module';
 
 @Module({
 	imports: [
@@ -21,6 +22,7 @@ import { InteractionOptionsCQRSModule } from './interactionOptions/interacitonOp
 		InteractionModulesCQRSModule,
 		PrePostInteractionModulesCQRSModule,
 		InteractionOptionsCQRSModule,
+		FilesCQRSModule,
 		ConfigModule.forRoot({
 			load: [configuration],
 			cache: true,
