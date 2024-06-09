@@ -1,6 +1,11 @@
-import { Body } from '@nestjs/common';
+import { Request } from 'express';
+import { firstValueFrom, map } from 'rxjs';
+import admin from 'src/main';
+
+import { HttpService } from '@nestjs/axios';
 import {
 	BadRequestException,
+	Body,
 	Controller,
 	Get,
 	HttpStatus,
@@ -8,12 +13,9 @@ import {
 	Req,
 	UnauthorizedException,
 } from '@nestjs/common';
-import { Request } from 'express';
-import { FirebaseAuthService } from '../service/auth.service';
+
 import { UserDTO } from '../dto/user.dto';
-import admin from 'src/main';
-import { HttpService } from '@nestjs/axios';
-import { firstValueFrom, map } from 'rxjs';
+import { FirebaseAuthService } from '../service/auth.service';
 
 @Controller('authenticate')
 export class AuthController {

@@ -1,4 +1,13 @@
-import { Body, Controller, Get, Inject, Param, Post, Put } from '@nestjs/common';
+import {
+	Body,
+	Controller,
+	Get,
+	Inject,
+	Param,
+	Post,
+	Put,
+	Req,
+} from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { Auth } from 'src/decorators/auth.decorator';
 import { CreateCourseDto } from 'src/dto/request/createCourse.dto';
@@ -33,8 +42,11 @@ export class CoursesController {
 	}
 
 	@Put(':id')
-	async updateCourse(@Param('id') id,@Body() updateCourseDto: UpdateCourseDto): Promise<any> {
-		updateCourseDto.courseId=id;
+	async updateCourse(
+		@Param('id') id,
+		@Body() updateCourseDto: UpdateCourseDto,
+	): Promise<any> {
+		updateCourseDto.courseId = id;
 		return this.coursesCommandClient.send(
 			{ cmd: 'update_course' },
 			updateCourseDto,

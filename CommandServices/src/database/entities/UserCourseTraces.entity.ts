@@ -18,7 +18,7 @@ export class UserCourseTraces {
 	@JoinColumn([{ name: 'course_id', referencedColumnName: 'id' }])
 	course: Courses;
 
-	@ManyToOne(() => Users, (users) => users.userCourseTraces)
-	@JoinColumn([{ name: 'user_uid', referencedColumnName: 'userUid' }])
-	userU: Users;
+	@Column('character varying', { name: 'user_uid' })
+	userUid: string;
 }
+

@@ -6,6 +6,7 @@ import {
 	GetChaptersHandler,
 	GetCourseByIdHandler,
 	GetCoursesHandler,
+	GetTraceCoursesHandler,
 } from './queries/handler/get-courses.handler';
 import { coursesProviders } from './courses.providers';
 import { CqrsModule } from '@nestjs/cqrs';
@@ -15,6 +16,7 @@ export const QueryHandlers = [
 	GetCourseByIdHandler,
 	GetChaptersHandler,
 	GetChapterByByTutorialIdHandler,
+	GetTraceCoursesHandler,
 ];
 
 @Module({

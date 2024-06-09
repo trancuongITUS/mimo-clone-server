@@ -7,6 +7,7 @@ import { DatabaseModule } from './database/database.module';
 import { CoursesCQRSModule } from './courses/courses.module';
 import { SectionsCQRSModule } from './sections/sections.module';
 import { TutorialsCQRSModule } from './tutorials/tutorials.module';
+import { CoursesTraceModule } from './courses-trace/courses-trace.module';
 import { ChaptersCQRSModule } from './chapters/chapters.module';
 import { InteractionModulesCQRSModule } from './interactionModules/interactionModules.module';
 import { PrePostInteractionModulesCQRSModule } from './prePostInteractionModules/prePostInteractionModule.module';
@@ -33,6 +34,7 @@ import { LessonsCQRSModule } from './lessons/lesson.module';
 			isGlobal: true,
 		}),
 		DatabaseModule,
+		CoursesTraceModule,
 	],
 	controllers: [AppController],
 	providers: [AppService],

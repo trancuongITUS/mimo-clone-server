@@ -4,6 +4,7 @@ import {
 	GetChaptersQuery,
 	GetCourseByIdQuery,
 	GetCoursesQuery,
+	GetTraceCourses,
 	GetTutorialsQuery,
 } from '../courses.queries';
 import { Repository } from 'typeorm';
@@ -12,6 +13,7 @@ import { Inject } from '@nestjs/common';
 import { Chapters } from 'src/database/entities/Chapters.entity';
 import { Sections } from 'src/database/entities/Sections.entity';
 import { Tutorials } from 'src/database/entities/Tutorials.entity';
+import { UserCourseTraces } from 'src/database/entities/UserCourseTraces.entity';
 
 @QueryHandler(GetCoursesQuery)
 export class GetCoursesHandler implements IQueryHandler<GetCoursesQuery> {
@@ -151,6 +153,23 @@ export class GetChapterByByTutorialIdHandler
 			)
 			.where('tutorial_id= :id', { id: query.tutorialId })
 			.getMany();
+	}
+}
+
+@QueryHandler(GetTraceCourses)
+export class GetTraceCoursesHandler implements IQueryHandler<GetTraceCourses> {
+	constructor(
+		@Inject('USER_COURSE_TRACES_REPOSITORY')
+		private readonly repository: Repository<UserCourseTraces>,
+	) {}
+	execute(query: GetTraceCourses): Promise<UserCourseTraces> {
+		return this.repository
+			.createQueryBuilder('user_course_trace')
+			.where('course_id= :id AND user_uid= :userId', {
+				id: query.courseId,
+				userId: query.userId,
+			})
+			.getOne();
 	}
 }
 

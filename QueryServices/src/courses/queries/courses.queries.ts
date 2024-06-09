@@ -13,3 +13,10 @@ export class GetChapterByTutorialId {
 	constructor(public readonly tutorialId: string) {}
 }
 
+export class GetTraceCourses {
+	constructor(
+		public readonly courseId: string,
+		public readonly userId: string,
+	) {}
+}
+

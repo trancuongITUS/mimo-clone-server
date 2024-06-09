@@ -9,10 +9,5 @@ export class Users {
 
 	@Column('character varying', { name: 'role', nullable: true })
 	role: string | null;
-
-	@OneToMany(
-		() => UserCourseTraces,
-		(userCourseTraces) => userCourseTraces.userU,
-	)
-	userCourseTraces: UserCourseTraces[];
 }
+
