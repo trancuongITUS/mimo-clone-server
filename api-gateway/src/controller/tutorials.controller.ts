@@ -6,9 +6,11 @@ import {
 	Body,
 	Post,
 	Query,
+	Put,
 } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { CreateTutorialDto } from 'src/dto/request/createTutorial.dto';
+import { UpdateTutorialDto } from 'src/dto/request/updateTutorial.dto';
 
 @Controller('tutorials')
 export class TutorialsController {
@@ -41,5 +43,20 @@ export class TutorialsController {
 			createTutorialDto,
 		);
 	}
+	
+	@Put(':id')
+	async updateTutorial(
+		@Param('id') id,
+		@Body() updateTutorialDto: UpdateTutorialDto,
+	): Promise<any> {
+		updateTutorialDto.tutorialId=id;
+		return this.coursesCommandClient.send(
+			{ cmd: 'update_tutorial' },
+			updateTutorialDto,
+		);
+	}
+
+
+
 }
 

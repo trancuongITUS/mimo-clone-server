@@ -5,11 +5,13 @@ import {
 	Inject,
 	Param,
 	Post,
+	Put,
 	Req,
 } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { Auth } from 'src/decorators/auth.decorator';
 import { CreateCourseDto } from 'src/dto/request/createCourse.dto';
+import { UpdateCourseDto } from 'src/dto/request/updateCourse.dto';
 
 @Controller('courses')
 export class CoursesController {
@@ -36,6 +38,18 @@ export class CoursesController {
 		return this.coursesCommandClient.send(
 			{ cmd: 'create_course' },
 			createCourseDto,
+		);
+	}
+
+	@Put(':id')
+	async updateCourse(
+		@Param('id') id,
+		@Body() updateCourseDto: UpdateCourseDto,
+	): Promise<any> {
+		updateCourseDto.courseId = id;
+		return this.coursesCommandClient.send(
+			{ cmd: 'update_course' },
+			updateCourseDto,
 		);
 	}
 }

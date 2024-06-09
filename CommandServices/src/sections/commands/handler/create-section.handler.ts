@@ -27,7 +27,7 @@ export class CreateSectionHandler
     course.id = courseId;
     section.course = course; 
     this.repository.save(section);
-    this.sendEvent(section,this.eventBus);
+   // this.sendEvent(section,this.eventBus);
     return section;
   }
 

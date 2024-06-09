@@ -11,6 +11,12 @@ import { FirebaseAuthService } from 'src/service/auth.service';
 import { HttpModule } from '@nestjs/axios';
 import { FirebaseAdmin } from 'firebase.setup';
 import { TraceCourseController } from 'src/controller/trackCourse.controller';
+import { InteractionModulesController } from 'src/controller/interactionModules.controller';
+import { PrePostInteractionModulesController } from 'src/controller/prePostInteractionModules.controller';
+import { InteractionOptionController } from 'src/controller/interactionOptions.controller';
+import { FilesController } from 'src/controller/files.controller';
+import { ItemsController } from 'src/controller/items.controller';
+import { LessonsController } from 'src/controller/lessons.controller';
 
 @Module({
 	imports: [
@@ -49,7 +55,13 @@ import { TraceCourseController } from 'src/controller/trackCourse.controller';
 		ChaptersController,
 		SectionsController,
 		TutorialsController,
+		InteractionModulesController,
+		PrePostInteractionModulesController,
+		InteractionOptionController,
+		FilesController,
 		AuthController,
+		ItemsController,
+		LessonsController,
 	],
 	providers: [DemoService, FirebaseAuthService, FirebaseAdmin],
 })

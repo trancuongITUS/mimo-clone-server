@@ -15,7 +15,7 @@ async function bootstrap() {
 			},
 		},
 	);
-	await connectToEventStore();
+	//await connectToEventStore();
 	await app.listen();
 }
 
