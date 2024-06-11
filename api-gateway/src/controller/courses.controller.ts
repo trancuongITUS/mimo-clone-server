@@ -1,6 +1,7 @@
 import {
 	Body,
 	Controller,
+	Delete,
 	Get,
 	Inject,
 	Param,
@@ -51,6 +52,11 @@ export class CoursesController {
 			{ cmd: 'update_course' },
 			updateCourseDto,
 		);
+	}
+
+	@Delete(':id')
+	async deleteCourse(@Param('id') id): Promise<any> {
+		return this.coursesCommandClient.send({ cmd: 'delete_course' }, id);
 	}
 }
 

@@ -5,6 +5,7 @@ import { Courses } from 'src/database/entities/Courses.entity';
 import { CreateCourseDto } from './dto/createCourse.dto';
 import {
 	CreateCourseCommand,
+	DeleteCourseCommand,
 	UpdateCourseCommand,
 } from './commands/course.command';
 import { UpdateCourseDto } from './dto/updateCourse.dto';
@@ -19,11 +20,19 @@ export class CoursesController {
 			new CreateCourseCommand(createCourseDto),
 		);
 	}
+
 	@MessagePattern({ cmd: 'update_course' })
 	async updateCourse(updateCourseDto: UpdateCourseDto): Promise<Courses> {
 		console.log('update course');
 		return await this.commandbus.execute(
 			new UpdateCourseCommand(updateCourseDto),
+		);
+	}
+
+	@MessagePattern({ cmd: 'delete_course' })
+	async deleteCourse(courseId: string): Promise<any> {
+		return await this.commandbus.execute(
+			new DeleteCourseCommand(courseId),
 		);
 	}
 }

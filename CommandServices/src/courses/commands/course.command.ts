@@ -8,3 +8,7 @@ export class CreateCourseCommand {
 export class UpdateCourseCommand {
   constructor(public readonly updateCourseDto: UpdateCourseDto) {}
 }
+
+export class DeleteCourseCommand {
+	constructor(public readonly courseId: string) {}
+}
