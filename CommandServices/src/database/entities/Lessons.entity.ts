@@ -25,6 +25,7 @@ export class Lessons {
 	@OneToMany(
 		() => InteractionModule,
 		(interactionModule) => interactionModule.lesson,
+		{onDelete: 'CASCADE'}
 	)
 	interactionModules: InteractionModule[];
 
@@ -35,6 +36,7 @@ export class Lessons {
 	@OneToMany(
 		() => PrePostInteractionModules,
 		(prePostInteractionModules) => prePostInteractionModules.lesson,
+		{onDelete: 'CASCADE'}
 	)
 	prePostInteractionModules: PrePostInteractionModules[];
 }

@@ -31,6 +31,7 @@ export class InteractionOption {
 	@ManyToOne(
 		() => InteractionModule,
 		(interactionModule) => interactionModule.interactionOptions,
+		{onDelete: 'CASCADE'}
 	)
 	@JoinColumn([{ name: 'interaction_module_id', referencedColumnName: 'id' }])
 	interactionModule: InteractionModule;

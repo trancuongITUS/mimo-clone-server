@@ -1,7 +1,7 @@
 import { Controller } from "@nestjs/common";
 import { QueryBus, CommandBus } from "@nestjs/cqrs";
 import { MessagePattern } from "@nestjs/microservices";
-import { CreateLessonCommand, UpdateLessonCommand } from "./command/lessons.commands";
+import { CreateLessonCommand, DeleteLessonCommand, UpdateLessonCommand } from "./command/lessons.commands";
 import { CreateLessonDto } from "./dto/createLesson.dto";
 import { UpdateLessonDto } from "./dto/updateLesson.dto";
 
@@ -21,4 +21,12 @@ export class LessonsController {
     async updateLesson(updateLessonDto: UpdateLessonDto): Promise<any> {
         return await this.commandbus.execute(new UpdateLessonCommand(updateLessonDto));
     }
+
+    @MessagePattern({ cmd: 'delete_lesson' })
+	async deleteCourse(lessonId: string): Promise<any> {
+        console.log("delete")
+		return await this.commandbus.execute(
+			new DeleteLessonCommand(lessonId),
+		);
+	}
 }

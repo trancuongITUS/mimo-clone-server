@@ -29,19 +29,20 @@ export class InteractionModule {
 	@Column('boolean', { name: 'is_code', nullable: true })
 	isCode: boolean | null;
 
-	@OneToMany(() => Files, (files) => files.interactionModule)
+	@OneToMany(() => Files, (files) => files.interactionModule, {onDelete: 'CASCADE'})
 	files: Files[];
 
-	@ManyToOne(() => Lessons, (lessons) => lessons.interactionModules)
+	@ManyToOne(() => Lessons, (lessons) => lessons.interactionModules, {onDelete: 'CASCADE'})
 	@JoinColumn([{ name: 'lesson_id', referencedColumnName: 'id' }])
 	lesson: Lessons;
 
 	@OneToMany(
 		() => InteractionOption,
 		(interactionOption) => interactionOption.interactionModule,
+		{onDelete: 'CASCADE'}
 	)
 	interactionOptions: InteractionOption[];
 
-	@OneToMany(() => Items, (items) => items.interactionModule)
+	@OneToMany(() => Items, (items) => items.interactionModule, {onDelete: 'CASCADE'})
 	items: Items[];
 }

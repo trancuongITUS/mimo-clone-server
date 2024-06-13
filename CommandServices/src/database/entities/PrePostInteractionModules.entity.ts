@@ -30,10 +30,10 @@ export class PrePostInteractionModules {
 	@Column('character varying', { name: 'type', nullable: true })
 	type: string | null;
 
-	@OneToMany(() => Files, (files) => files.preInteractionModule)
+	@OneToMany(() => Files, (files) => files.preInteractionModule, {onDelete: 'CASCADE'})
 	files: Files[];
 
-	@ManyToOne(() => Lessons, (lessons) => lessons.prePostInteractionModules)
+	@ManyToOne(() => Lessons, (lessons) => lessons.prePostInteractionModules,{onDelete: 'CASCADE'} )
 	@JoinColumn([{ name: 'lesson_id', referencedColumnName: 'id' }])
 	lesson: Lessons;
 }

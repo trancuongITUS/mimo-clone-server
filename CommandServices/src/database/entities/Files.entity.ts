@@ -23,6 +23,7 @@ export class Files {
 	@ManyToOne(
 		() => InteractionModule,
 		(interactionModule) => interactionModule.files,
+		{onDelete: 'CASCADE'}
 	)
 	@JoinColumn([{ name: 'interaction_module_id', referencedColumnName: 'id' }])
 	interactionModule: InteractionModule;
@@ -30,6 +31,7 @@ export class Files {
 	@ManyToOne(
 		() => PrePostInteractionModules,
 		(prePostInteractionModules) => prePostInteractionModules.files,
+		{onDelete: 'CASCADE'}
 	)
 	@JoinColumn([
 		{ name: 'pre_interaction_module_id', referencedColumnName: 'id' },

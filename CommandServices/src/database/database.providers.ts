@@ -31,7 +31,7 @@ export const databaseProviders = [
 				database: config.database,
 				entities: [__dirname + '/../**/*.entity{.ts,.js}'],
 				//entities: [__dirname + './entities/**/*.{ts,js}'],
-				synchronize: false,
+				synchronize: true,
 				ssl: config.ssl,
 			});
 			return dataSource.initialize();

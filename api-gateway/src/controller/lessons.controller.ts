@@ -1,4 +1,4 @@
-import { Controller, Inject, Get, Param, Post, Body, Put, Query } from "@nestjs/common";
+import { Controller, Inject, Get, Param, Post, Body, Put, Query, Delete } from "@nestjs/common";
 import { ClientProxy } from "@nestjs/microservices";
 import { CreateLessonDto } from "src/dto/request/createLesson.dto";
 import { UpdateLessonDto } from "src/dto/request/updateLesson.dto";
@@ -48,5 +48,10 @@ export class LessonsController {
 			{ cmd: 'update_lesson' },
 			updateLessonDto,
 		);
+	}
+
+	@Delete(':id')
+	async deleteCourse(@Param('id') id): Promise<any> {
+		return this.lessonsCommandClient.send({ cmd: 'delete_lesson' }, id);
 	}
 }
