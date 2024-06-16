@@ -105,27 +105,27 @@ CREATE TABLE "user_course_traces" (
   "is_favourite" bool
 );
 
-ALTER TABLE "chapters" ADD FOREIGN KEY ("tutorial_id") REFERENCES "tutorials" ("id");
+ALTER TABLE "chapters" ADD FOREIGN KEY ("tutorial_id") REFERENCES "tutorials" ("id") ON DELETE CASCADE;
 
-ALTER TABLE "files" ADD FOREIGN KEY ("interaction_module_id") REFERENCES "interaction_module" ("id");
+ALTER TABLE "files" ADD FOREIGN KEY ("interaction_module_id") REFERENCES "interaction_module" ("id") ON DELETE CASCADE;
 
-ALTER TABLE "files" ADD FOREIGN KEY ("pre_interaction_module_id") REFERENCES "pre_post_interaction_modules" ("id");
+ALTER TABLE "files" ADD FOREIGN KEY ("pre_interaction_module_id") REFERENCES "pre_post_interaction_modules" ("id") ON DELETE CASCADE;
 
-ALTER TABLE "interaction_module" ADD FOREIGN KEY ("lesson_id") REFERENCES "lessons" ("id");
+ALTER TABLE "interaction_module" ADD FOREIGN KEY ("lesson_id") REFERENCES "lessons" ("id") ON DELETE CASCADE;
 
-ALTER TABLE "interaction_option" ADD FOREIGN KEY ("interaction_module_id") REFERENCES "interaction_module" ("id");
+ALTER TABLE "interaction_option" ADD FOREIGN KEY ("interaction_module_id") REFERENCES "interaction_module" ("id") ON DELETE CASCADE;
 
-ALTER TABLE "items" ADD FOREIGN KEY ("interaction_module_id") REFERENCES "interaction_module" ("id");
+ALTER TABLE "items" ADD FOREIGN KEY ("interaction_module_id") REFERENCES "interaction_module" ("id") ON DELETE CASCADE;
 
-ALTER TABLE "lessons" ADD FOREIGN KEY ("chapter_id") REFERENCES "chapters" ("id");
+ALTER TABLE "lessons" ADD FOREIGN KEY ("chapter_id") REFERENCES "chapters" ("id") ON DELETE CASCADE;
 
-ALTER TABLE "pre_post_interaction_modules" ADD FOREIGN KEY ("lesson_id") REFERENCES "lessons" ("id");
+ALTER TABLE "pre_post_interaction_modules" ADD FOREIGN KEY ("lesson_id") REFERENCES "lessons" ("id") ON DELETE CASCADE;
 
-ALTER TABLE "sections" ADD FOREIGN KEY ("course_id") REFERENCES "courses" ("id");
+ALTER TABLE "sections" ADD FOREIGN KEY ("course_id") REFERENCES "courses" ("id") ON DELETE CASCADE;
 
-ALTER TABLE "tutorials" ADD FOREIGN KEY ("section_id") REFERENCES "sections" ("id");
+ALTER TABLE "tutorials" ADD FOREIGN KEY ("section_id") REFERENCES "sections" ("id") ON DELETE CASCADE;
 
-ALTER TABLE "user_course_traces" ADD FOREIGN KEY ("course_id") REFERENCES "courses" ("id");
+ALTER TABLE "user_course_traces" ADD FOREIGN KEY ("course_id") REFERENCES "courses" ("id") ON DELETE CASCADE;
 
 INSERT INTO users (user_uid, role)
 VALUES 

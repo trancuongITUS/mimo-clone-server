@@ -23,7 +23,7 @@ export class CoursesController {
 	) {}
 
 	@Get()
-	@Auth('user')
+	// @Auth('user')
 	async getAll(): Promise<any> {
 		return this.coursesQueryClient.send({ cmd: 'get_all_courses' }, {});
 	}
