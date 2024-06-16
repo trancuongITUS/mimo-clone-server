@@ -1,0 +1,17 @@
+name: CI/CD for Next.js
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - demo-microservices/**
+      - .github/workflows/demo-microservices.yml
+
+jobs:
+  ci:
+    uses: duongtanton/DACNPM-cicd/.github/workflows/demo-microservices.yml@main
+    secrets:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      TOKEN: ${{ secrets.TOKEN }}
